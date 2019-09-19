@@ -1,0 +1,128 @@
+<!-- 
+Author: 武侠
+Edited: Vy Nghia
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>My Lonely Life</title>
+	
+	<!-- Import Font -->
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital-7_mono.ttf') format("truetype");
+		}
+	</style>
+	<!-- Default CSS -->
+	<link href="./lib/default.css" type="text/css" rel="stylesheet">
+	
+	<!-- Script Lib -->
+	<script type="text/javascript" src="./lib/jquery.js"></script>
+	<script type="text/javascript" src="./lib/garden.js"></script>
+	
+	<!-- Font -->
+	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+	<!-- MUSIC -->
+	<audio autoplay="autopaly">
+		<source src="music/sorry.mp3" type="audio/mp3">
+	</audio>  
+	
+	<div id="mainDiv">
+	
+		<!--- TEXT [EDIT ONLY] -->
+		<div id="content" style="width: 1160px; height: 625px; margin-top: 52px; margin-left: 220px;">
+			<div id="code" style="margin-top: 62.5px;">
+			
+				<span class="keyword"></span> (<span class="string">"~~~~~Nguyễn Văn Lâm~~~~~"</span>);<br>
+				<span class="comments">~</span><br />
+			<span class="space"/><span class="comments">*Một điều anh muốn nói,</span><br />
+			<span class="space"/><span class="comments">*Tận ở trong trái tim của anh!</span><br />
+			<span class="space"/><span class="comments">~</span><br />
+			<span class="comments">// Rơi vào lưới tình. </span><br />
+			Anh đã rơi vào dòng sông tình yêu của em;<br />
+			<span class="comments">// Anh đã yêu em.</span><br />
+			Từ đó anh luôn nghĩ về em, luôn muốn bên cạnh em;<br />
+			<span class="comments">// Thời gian trôi đi...</span><br />
+			Anh vẫn không nghĩ về em, thương em thật nhiều;<br />
+			<span class="comments">// Sự sắp đặt ngọt ngào.</span><br />
+			Anh luôn nhìn em trong sự im lặng;<br />
+			<span class="comments">// Bầu trời tĩnh lặng.</span><br />
+			<span class="comments">// Cho dù đi bộ 69 kilomet.</span><br />
+			<span class="keyword">Anh</span> rất <span class="keyword">hạnh phúc</span>;<br />
+			<span class="keyword">Anh</span> muốn em cũng <span class="keyword">hạnh phúc</span>;<br />
+			<span class="placeholder"/><span class="comments">// Ngay bây giờ, lúc này....</span><br />
+			<span class="placeholder"/><span class="comments">// Có thể ở trong tương lai.</span><br />
+			<span class="placeholder"/>Một giấc mơ? Anh muốn nó thành sự thật;<br />
+			<span class="comments">// Anh muốn em hạnh phúc và thuộc về anh.</span><br />
+			<br>
+			<br>
+			Anh muốn nói với em:<br />
+			Dù biết anh là <span class="keyword">CON TRAI</span>;<br />
+			Nhưng anh muốn <span class="keyword">QUAN TÂM EM</span>;<br /><br />
+			</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></div>
+			<div id="loveHeart">
+				<canvas id="garden" width="670" height="625"></canvas>
+				<div id="words">
+					<div id="messages">
+						&nbsp;&nbsp;Anh đã chờ em &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<br> chờ em trong<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<br>
+						<div id="elapseClock">&nbsp;&nbsp;&nbsp;&nbsp;<span class="digit">333</span> ngày <span class="digit">17</span> giờ <span class="digit"><br>&nbsp;&nbsp;07</span> phút <span class="digit">33</span> giây</div>
+					</div>
+					
+					<div id="loveu">
+						Sống trong cô đơn.<br>
+						<div class="signature">~ Văn Lâm ~</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--- END TEXT [EDIT ONLY] -->
+		
+		<!-- COPYRIGHT -->
+		<div style="text-align:center;margin:0px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+		<p>© 2019 Nguyễn Văn Lâm</b></p>
+	</div>
+	
+	<!-- Time & Canvas -->
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var nolovetime = new Date();
+		nolovetime.setFullYear(2019, 07, 30); // (years, month, days)
+		nolovetime.setHours(0);
+		nolovetime.setMinutes(0);
+		nolovetime.setSeconds(0);
+		nolovetime.setMilliseconds(0);
+		
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 100);
+
+			timeElapse(nolovetime);
+			setInterval(function () {
+				timeElapse(nolovetime);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+	</script>
+
+
+</body></html>
