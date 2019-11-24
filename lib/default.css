@@ -33,7 +33,7 @@ body {
 	font-family: "sans-serif";
 	width: 500px;
 	font-size: 24px;
-	color:#666;
+	color:#fff;
 	font-family: Roboto;
 }
 
@@ -71,7 +71,7 @@ body {
 	float: left;
 	width: 490px;
 	height: 500px;
-	color: #333;
+	color: #a9ff00;
 	font-family: "Consolas", "Monaco", "Bitstream Vera Sans Mono", "Courier New", "sans-serif";
 	font-size: 12px;
 }
