@@ -33,7 +33,7 @@ body {
 	font-family: "sans-serif";
 	width: 500px;
 	font-size: 24px;
-	color:#fff;
+	color:#b30000;
 	font-family: Roboto;
 }
 
@@ -71,7 +71,7 @@ body {
 	float: left;
 	width: 490px;
 	height: 500px;
-	color: #a9ff00;
+	color: #ff00a5;
 	font-family: "Consolas", "Monaco", "Bitstream Vera Sans Mono", "Courier New", "sans-serif";
 	font-size: 12px;
 }
@@ -94,7 +94,7 @@ body {
 }
 
 #code .comments{
-	color: #3f7f5f;
+	color:#004636;
 }
 
 #copyright{
